@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>qrpc test</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 class="h1">qrpc test</h1>
+    <div class="wrapper">
+      <div class="input">
+        <div class="hd">input</div>
+        <div class="bd">
+          <div class="address" id="address">
+            <label>address:</label>
+            <div class="select-outer">
+              <div class="select-inner">
+                <select id="protocol">
+                  <option value="wss">wss</option>
+                  <option value="ws">ws</option>
+                </select>
+              </div>
+            </div>
+            <input
+              type="text"
+              placeholder="请填写url"
+              id="url"
+              value="im.t.ywopt.com"
+            /><span>:</span>
+            <input
+              type="number"
+              placeholder="请填写port"
+              class="port"
+              id="port"
+              min="0"
+              value="8901"
+            />
+          </div>
+          <div>
+            <label>cmd:</label>
+            <div class="select-outer select-outer-cmd">
+              <div class="select-inner">
+                <select id="cmd" class="cmd"> </select>
+              </div>
+            </div>
+            <!-- <input type="number" placeholder="请填写cmd" id="cmd" value="0" min="0" /> -->
+          </div>
+          <div>
+            <label>payload:</label>
+            <textarea placeholder="请填写payload" id="payload"></textarea>
+          </div>
+          <div class="op">
+            <label>&nbsp;</label>
+            <span>
+              <button class="btn" id="connect">connect</button>
+              <button class="btn" id="send" disabled>send</button>
+              <button class="btn" id="close" disabled>close</button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="output">
+        <div class="hd">output</div>
+        <div class="bd">
+          <div id="type"></div>
+          <pre id="pre"></pre>
+        </div>
+      </div>
+    </div>
+    <script src="./pako.min.js"></script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

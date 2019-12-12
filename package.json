@@ -1,0 +1,35 @@
+{
+  "name": "qrpc-web",
+  "version": "0.1.0",
+  "description": "qRPC-Web provides a JavaScript library that lets browser clients access a qRPC service.",
+  "main": "qrpc.js",
+  "module": "qrpc.esm.js",
+  "unpkg": "qrpc.js",
+  "scripts": {
+    "build": "node build.js",
+    "pre": "npm run build && cp qrpc.esm.js ./test",
+    "prepublish": "npm run pre",
+    "pretest": "npm run pre",
+    "test": "npx http-server -o ./test/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zzf03680147/qrpc-web.git"
+  },
+  "author": "zhuzefu@innotechx.com",
+  "license": "ISC",
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.4.3",
+    "rollup": "^1.9.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.3"
+  }
+}
