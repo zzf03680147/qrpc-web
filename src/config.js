@@ -8,7 +8,7 @@ class Config {
     return this._dialTimeout;
   }
 
-  setDialTimeout(timeout) {
+  set DialTimeout(timeout) {
     this._dialTimeout = timeout;
   }
 

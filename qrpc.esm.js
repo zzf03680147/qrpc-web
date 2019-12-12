@@ -1,5 +1,5 @@
 /*!
- * qrpc.js v0.2.0
+ * qrpc.js v0.4.0
  * (c) 2019 innotechx
  * Released under the MIT License.
  */
@@ -96,7 +96,7 @@ function () {
 
       var bFlags = flags.toString(2);
 
-      if (bFlags.charAt[bFlags.length - zipFlagPos] === '1') {
+      if (bFlags.charAt(bFlags.length - zipFlagPos) === '1') {
         payload = Frame.unzipAdapter(payload);
       } else {
         payload = Frame.textDecoder.decode(payload);
@@ -147,14 +147,14 @@ function () {
   }
 
   _createClass(Config, [{
-    key: "setDialTimeout",
-    value: function setDialTimeout(timeout) {
-      this._dialTimeout = timeout;
-    }
-  }, {
     key: "dialTimeout",
     get: function get() {
       return this._dialTimeout;
+    }
+  }, {
+    key: "DialTimeout",
+    set: function set(timeout) {
+      this._dialTimeout = timeout;
     }
   }, {
     key: "requestTimeout",
