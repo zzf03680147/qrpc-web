@@ -1,5 +1,5 @@
 /*!
- * qrpc.js v0.4.0
+ * qrpc.js v0.4.1
  * (c) 2019 innotechx
  * Released under the MIT License.
  */
