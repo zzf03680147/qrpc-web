@@ -26,7 +26,7 @@ class Frame {
 
     const zipFlagPos = 6; // zip flag
     const bFlags = flags.toString(2);
-    if (bFlags.charAt[bFlags.length - zipFlagPos] === '1') {
+    if (bFlags.charAt(bFlags.length - zipFlagPos) === '1') {
       payload = Frame.unzipAdapter(payload);
     } else {
       payload = Frame.textDecoder.decode(payload);
