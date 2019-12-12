@@ -1,40 +1,50 @@
-### 一、测试
+qrpc-web
+==========================================
 
-```javascript
-yarn test or npm test
+>  a JavaScript library that lets browser clients access a qRPC service. You can find out much more about qRPC
+[website](https://github.com/zhiqiangxu/qrpc).
+
+
+Install
+-------------
+
+```sh
+$ npm i qrpc-web
 ```
 
-### 二、初始化
+Example & API
+-------------
+example - https://codesandbox.io/s/stoic-hawking-lk50t
 
 ```javascript
-import qrpc from 'qrpc';
+import qrpc from 'qrpc-web';
 
-const { Connector, Config } = qrpc;
+const { Client, Config } = qrpc;
 
-const connector = new Connector({
-  addr: 'wss://im.t.ywopt.com:8901/qrpc',
-  conf: new Config({
-    dialTimeout: 1000,
-    requestTimeout: 2000
-  }),
-  onopen: e => {
-    console.log(e);
-  },
-  onmessage: e => {
-    console.log(e);
-  }
-});
+;(async function() {
+  const client = new Client({
+    addr: 'wss://im.t.ywopt.com:8901/qrpc',
+    conf: new Config({
+      dialTimeout: 1000,
+      requestTimeout: 2000
+    }),
+    onopen: e => {
+      console.log(e);
+    },
+    onmessage: e => {
+      console.log(e);
+    }
+  });
 
-(async function() {
   try {
-    await connector.init();
+    await client.connect();
 
     const cmd = 0;
     const flags = 0;
     const loginRequest = { app: 3, uid: 'cs1', device: 'mac', token: 'cs' };
     const payload = JSON.stringify(loginRequest);
 
-    const frame = await connector.request({
+    const frame = await client.request({
       cmd,
       flags,
       payload
@@ -44,4 +54,11 @@ const connector = new Connector({
     console.errer(errer);
   }
 })();
+```
+
+Test
+-------------
+
+```sh
+$ npm test
 ```

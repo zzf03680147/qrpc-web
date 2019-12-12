@@ -1,7 +1,7 @@
 {
   "name": "qrpc-web",
-  "version": "0.1.0",
-  "description": "qRPC-Web provides a JavaScript library that lets browser clients access a qRPC service.",
+  "version": "0.2.0",
+  "description": "a JavaScript library that lets browser clients access a qRPC service.",
   "main": "qrpc.js",
   "module": "qrpc.esm.js",
   "unpkg": "qrpc.js",
@@ -17,7 +17,8 @@
     "url": "https://github.com/zzf03680147/qrpc-web.git"
   },
   "author": "zhuzefu@innotechx.com",
-  "license": "ISC",
+  "license": "MIT",
+  "homepage": "https://github.com/vuejs/vue-router#readme",
   "engines": {
     "node": ">=8.0.0",
     "npm": ">=5.2.0"

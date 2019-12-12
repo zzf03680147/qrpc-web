@@ -1,7 +1,7 @@
 import qrpc from './qrpc.esm.js';
 import cmd from './cmd.js';
 
-const { Frame, Config, Connector } = qrpc;
+const { Frame, Config, Client } = qrpc;
 
 // https://github.com/nodeca/pako
 Frame.unzipAdapter = payload => {
@@ -16,7 +16,6 @@ const log = function(val, msgType = 'error') {
   if (typeof val === 'object') {
     val = JSON.stringify(val);
   }
-  console.log('val:', val);
   preNode.innerText = val;
   getById('type').innerText = msgType;
   if (msgType === 'error') {
@@ -54,7 +53,7 @@ getById('payload').value = stringify({
   uid: 'cs1'
 });
 
-let connector = null;
+let client = null;
 
 const sendMsg = async function() {
   try {
@@ -62,7 +61,7 @@ const sendMsg = async function() {
     if (payload !== '') {
       payload = eval(`(${payload})`);
     }
-    const frame = await connector.request({
+    const frame = await client.request({
       cmd: getById('cmd').value,
       payload: JSON.stringify(payload)
     });
@@ -78,7 +77,7 @@ getById('connect').onclick = async function() {
     getById('port').value
   }/qrpc`;
 
-  connector = new Connector({
+  client = new Client({
     addr,
     conf: new Config({
       dialTimeout: 1000,
@@ -97,7 +96,7 @@ getById('connect').onclick = async function() {
       log(`${stringify(e)}`, 'message');
     }
   });
-  await connector.init();
+  await client.connect();
   await sendMsg();
 
   getById('connect').disabled = true;
@@ -108,8 +107,8 @@ getById('connect').onclick = async function() {
 getById('send').onclick = sendMsg;
 
 getById('close').onclick = function() {
-  connector && connector.close();
-  connector = null;
+  client && client.close();
+  client = null;
 
   getById('connect').disabled = false;
   getById('close').disabled = true;

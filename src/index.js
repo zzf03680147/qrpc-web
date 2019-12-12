@@ -1,13 +1,13 @@
 import Frame from './frame';
 import Config from './Config';
 import Completer from './completer';
-import Connector from './connector';
+import Client from './client';
 
 const qrpc = {
   Frame,
   Config,
   Completer,
-  Connector
+  Client
 };
 
 export default qrpc;
