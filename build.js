@@ -23,7 +23,7 @@ async function build(inputOpts, outputOpts) {
     const bundle = await rollup.rollup(inputOpts);
     await bundle.write({
       ...outputOpts,
-      name: 'WebIM'
+      name: 'qrpc'
     });
     await writeBanner(outputOpts.file);
   } catch (e) {
