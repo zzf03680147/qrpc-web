@@ -3,11 +3,6 @@ import cmd from './cmd.js';
 
 const { Frame, Config, Client } = qrpc;
 
-// https://github.com/nodeca/pako
-Frame.unzipAdapter = payload => {
-  return pako.ungzip(payload, { to: 'string' });
-};
-
 // util
 const getById = id => document.getElementById(id);
 

@@ -1,6 +1,6 @@
 {
   "name": "qrpc-web",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "a JavaScript library that lets browser clients access a qRPC service.",
   "main": "qrpc.js",
   "module": "qrpc.esm.js",
@@ -32,5 +32,9 @@
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-uglify": "^6.0.3"
+  },
+  "dependencies": {
+    "fast-text-encoding": "^1.0.0",
+    "pako": "^1.0.10"
   }
 }

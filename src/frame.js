@@ -1,17 +1,12 @@
+import 'fast-text-encoding';
+import pako from 'pako/dist/pako_inflate';
+
 class Frame {
   constructor({ flags = 0, cmd, payload, requestID }) {
     this.flags = flags;
     this.cmd = cmd;
     this.payload = payload;
     this.requestID = requestID || this.genRequestID();
-  }
-
-  static get unzipAdapter() {
-    return Frame._unzipAdapter;
-  }
-
-  static set unzipAdapter(unzipAdapter) {
-    Frame._unzipAdapter = unzipAdapter;
   }
 
   static decode(buffer) {
@@ -83,7 +78,7 @@ class Frame {
 
 Frame.textEncoder = new TextEncoder('utf-8');
 Frame.textDecoder = new TextDecoder('utf-8');
-Frame._unzipAdapter = payload => payload;
+Frame.unzipAdapter = payload => pako.ungzip(payload, { to: 'string' });
 Frame.requestIDCached = {};
 
 export default Frame;

@@ -62,8 +62,14 @@ function writeBanner(file) {
     {
       input: resolvePath('src/index.js'),
       plugins: [
-        resolve(),
-        commonjs(),
+        resolve({
+          browser: true,
+          extensions: ['.mjs', '.js']
+        }),
+        commonjs({
+          include: 'node_modules/**',
+          sourceMap: false
+        }),
         babel({
           exclude: 'node_modules/**'
         }),
