@@ -1,5 +1,5 @@
 /*!
- * qrpc.js v0.4.3
+ * qrpc.js v0.4.4
  * (c) 2019 innotechx
  * Released under the MIT License.
  */
@@ -3609,7 +3609,7 @@ function () {
       });
       var bytes = frame.encode();
       this.ws.send(bytes);
-      this.onmessage(bytes);
+      this.request(bytes);
       var requestID = frame.requestID;
       this.respCache[requestID] = new Completer(this.conf.requestTimeout);
       return this.respCache[requestID].getPromise();

@@ -1,6 +1,6 @@
 {
   "name": "qrpc-web",
-  "version": "0.4.4",
+  "version": "1.0.0",
   "description": "a JavaScript library that lets browser clients access a qRPC service.",
   "main": "qrpc.js",
   "module": "qrpc.esm.js",
