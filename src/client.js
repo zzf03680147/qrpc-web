@@ -71,7 +71,7 @@ class Client {
     });
     const bytes = frame.encode();
     this.ws.send(bytes);
-    this.onmessage(bytes);
+    this.request(bytes);
     const requestID = frame.requestID;
     this.respCache[requestID] = new Completer(this.conf.requestTimeout);
     return this.respCache[requestID].getPromise();

@@ -3328,9 +3328,6 @@ exports.ungzip  = inflate;
 });
 });
 
-console.dir(pako_inflate);
-console.log(pako_inflate.ungzip);
-
 var Frame =
 /*#__PURE__*/
 function () {
