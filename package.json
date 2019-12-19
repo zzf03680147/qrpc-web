@@ -1,7 +1,7 @@
 {
   "name": "qrpc-web",
-  "version": "1.0.0",
-  "description": "a JavaScript library that lets browser clients access a qRPC service.",
+  "version": "1.0.1",
+  "description": "qrpc-web是js语言实现、利用WebSocket与qRPC服务进行交互的客户端程序",
   "main": "qrpc.js",
   "module": "qrpc.esm.js",
   "unpkg": "qrpc.js",

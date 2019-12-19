@@ -1,9 +1,4 @@
-qrpc-web
-==========================================
-
->  a JavaScript library that lets browser clients access a qRPC service. You can find out much more about qRPC
-[website](https://github.com/zhiqiangxu/qrpc).
-
+> qrpc-web是js语言实现、利用WebSocket与[qRPC服务](https://github.com/zhiqiangxu/qrpc)进行交互的客户端程序。
 
 Install
 -------------
