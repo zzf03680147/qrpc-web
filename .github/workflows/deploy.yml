@@ -21,6 +21,6 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.zzf03680147 }}
         BRANCH: gh-pages
         FOLDER: test
-        BUILD_SCRIPT: npm run build && cp qrpc.esm.js ./test
+        BUILD_SCRIPT: npm i && npm run build && cp qrpc.esm.js ./test
 
 
