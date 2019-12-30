@@ -1,15 +1,15 @@
 > qrpc-web是js语言实现、利用WebSocket与[qRPC服务](https://github.com/zhiqiangxu/qrpc)进行交互的客户端程序。
 
-Install
+开始
 -------------
 
 ```sh
 $ npm i qrpc-web
 ```
 
-Example & API
+在线例子
 -------------
-example - https://codesandbox.io/s/stoic-hawking-lk50t
+在线例子https://codesandbox.io/s/stoic-hawking-lk50t
 
 ```javascript
 import qrpc from 'qrpc-web';
@@ -51,9 +51,7 @@ const { Client, Config } = qrpc;
 })();
 ```
 
-Test
+测试
 -------------
+测试地址：https://zzf03680147.github.io/qrpc-web/
 
-```sh
-$ npm test
-```
