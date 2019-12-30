@@ -18,7 +18,7 @@
   },
   "author": "zhuzefu@innotechx.com",
   "license": "MIT",
-  "homepage": "https://github.com/zzf03680147/qrpc-web.git#readme",
+  "homepage": "https://zzf03680147.github.io/qrpc-web",
   "engines": {
     "node": ">=8.0.0",
     "npm": ">=5.2.0"
