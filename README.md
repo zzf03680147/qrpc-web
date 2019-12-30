@@ -53,5 +53,5 @@ const { Client, Config } = qrpc;
 
 测试
 -------------
-测试地址：https://zzf03680147.github.io/qrpc-web/
+地址：https://zzf03680147.github.io/qrpc-web/
 

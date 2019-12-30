@@ -1,4 +1,4 @@
-name: qrpc-web build and deploy 
+name: qrpc-web build & deploy 
 
 on:
   push:

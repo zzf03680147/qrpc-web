@@ -2,7 +2,6 @@ import Completer from './completer';
 import Frame from './frame';
 
 const noop = () => {};
-
 class Client {
   constructor({
     conf,
