@@ -9,7 +9,7 @@ $ npm i qrpc-web
 
 在线例子
 -------------
-在线例子https://codesandbox.io/s/stoic-hawking-lk50t
+在线例子：https://codesandbox.io/s/stoic-hawking-lk50t
 
 ```javascript
 import qrpc from 'qrpc-web';

@@ -6,6 +6,7 @@ const { uglify } = require('rollup-plugin-uglify');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const version = process.env.VERSION || require('./package.json').version;
+
 const banner =
   '/*!\n' +
   ' * qrpc.js v' +
