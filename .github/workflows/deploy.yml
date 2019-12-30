@@ -1,0 +1,26 @@
+name: qrpc-web build and deploy 
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Print
+      run: echo qrpc-web build and deploy! 
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: test
+        BUILD_SCRIPT: npm run build && cp qrpc.esm.js ./test
+
+
