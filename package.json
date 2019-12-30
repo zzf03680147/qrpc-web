@@ -7,9 +7,9 @@
   "unpkg": "qrpc.js",
   "scripts": {
     "build": "node build.js",
-    "pre": "npm run build && cp qrpc.esm.js ./test",
+    "pre": "npm run build && cp qrpc.esm.js ./doc",
     "pretest": "npm run pre",
-    "test": "npx http-server -o ./test/index.html"
+    "test": "npx http-server -o ./doc/index.html"
   },
   "repository": {
     "type": "git",
