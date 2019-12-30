@@ -6,26 +6,48 @@ on:
       - master
 
 jobs:
-  build:
-
+  deps:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@master
-    - run: yarn install
-    - run: yarn build
-    - name: npm publish
-      run: |
-        npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-      env:
-        CI: true
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-    - name: deploy to github-pages
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: test
-        BUILD_SCRIPT: cp qrpc.esm.js ./test
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - run: yarn
+
+  build:
+    needs: deps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - run: yarn build
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@master
+        - name: Deploy
+          uses: JamesIves/github-pages-deploy-action@releases/v3
+          with:
+            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+            BRANCH: master # The branch the action should deploy to.
+            FOLDER: test # The folder the action should deploy.
 
 
