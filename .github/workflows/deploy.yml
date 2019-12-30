@@ -37,7 +37,7 @@ jobs:
       - run: cp qrpc.esm.js ./docs
       - name: Deploy
         env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACCESS_TOKEN }}
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: master
           PUBLISH_DIR: ./docs
           SCRIPT_MODE: true
