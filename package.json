@@ -1,15 +1,15 @@
 {
   "name": "qrpc-web",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "qrpc-web是js语言实现、利用WebSocket与qRPC服务进行交互的客户端程序",
   "main": "qrpc.js",
   "module": "qrpc.esm.js",
   "unpkg": "qrpc.js",
   "scripts": {
     "build": "node build.js",
-    "pre": "npm run build && cp qrpc.esm.js ./doc",
+    "pre": "npm run build && cp qrpc.esm.js ./docs",
     "pretest": "npm run pre",
-    "test": "npx http-server -o ./doc/index.html"
+    "test": "npx http-server -o ./docs/index.html"
   },
   "repository": {
     "type": "git",
