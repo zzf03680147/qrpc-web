@@ -1,6 +1,6 @@
 {
   "name": "qrpc-web",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "qrpc-web是js语言实现、利用WebSocket与qRPC服务进行交互的客户端程序",
   "main": "qrpc.js",
   "module": "qrpc.esm.js",
