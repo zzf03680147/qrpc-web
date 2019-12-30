@@ -11,16 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: Print
-      run: echo qrpc-web build and deploy! 
-    - name: Build and Deploy
+    - uses: actions/checkout@master
+    - run: yarn install
+    - run: yarn build
+    - run: yarn publish
+    - name: deploy to github-pages
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.zzf03680147 }}
         BRANCH: gh-pages
         FOLDER: test
-        BUILD_SCRIPT: npm i && npm run build && cp qrpc.esm.js ./test
+        BUILD_SCRIPT: cp qrpc.esm.js ./test
 
 
