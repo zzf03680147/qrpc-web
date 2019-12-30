@@ -1,0 +1,150 @@
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Fira Sans', sans-serif;
+}
+.wrapper {
+  min-width: 768px;
+  max-width: 968px;
+  width: 85%;
+  margin: auto;
+  border: 1px solid rgba(155, 155, 155, 0.5);
+  border-radius: 3px;
+}
+
+label {
+  display: inline-block;
+  width: 70px;
+  vertical-align: top;
+}
+
+input,
+textarea {
+  width: 400px;
+  color: #625666;
+  background: #fff;
+  border: #cecece solid 1px;
+  outline: none;
+  padding: 5px;
+  vertical-align: top;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.bd > div {
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 175, 42, 1);
+  border-radius: 4px;
+  color: white;
+  background: rgba(0, 211, 50, 1);
+  cursor: pointer;
+  outline: none;
+}
+.btn:disabled {
+  color: rgba(0, 0, 0, 0.25);
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+  cursor: default;
+}
+.h1 {
+  padding: 10px 0;
+  font-size: 18px !important;
+  color: #353535;
+  font-weight: 300;
+  padding-left: 5px;
+  min-width: 768px;
+  max-width: 968px;
+  width: 85%;
+  margin: auto;
+  font-style: italic;
+}
+.hd {
+  margin: 0;
+  font-size: 14px;
+  color: #353535;
+  border-bottom: 1px solid rgba(155, 155, 155, 0.5);
+  line-height: 2.5;
+  padding: 0 10px;
+  font-style: italic;
+}
+.bd {
+  padding: 20px;
+}
+.output .hd {
+  border-top: 1px solid rgba(155, 155, 155, 0.5);
+}
+.op {
+  margin-top: 20px;
+}
+
+select {
+  border-color: #e8e5e8;
+  border-width: 1px;
+  padding: 4px;
+  margin-right: 5px;
+}
+.address input {
+  width: 217px;
+}
+.address .port {
+  width: 80px;
+}
+.address span {
+  margin-left: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+.isError {
+  color: red;
+}
+.select-outer {
+  display: inline-block;
+  padding: 3px;
+  border: #cecece solid 1px;
+  background-color: #fff;
+}
+.select-inner {
+  height: 19px;
+  width: 64px;
+  overflow: hidden;
+  position: relative;
+}
+.select-inner select {
+  display: block;
+  height: 21px;
+  margin: -1px -1px 0;
+  font-size: 12px;
+  overflow: hidden;
+  width: 66px;
+  border: #cecece solid 1px;
+  position: relative;
+  color: #a9a9a9;
+}
+.select-outer-cmd .select-inner {
+  width: 98px;
+}
+
+.select-outer-cmd .select-inner select {
+  width: 100px;
+}
+
+.cmd {
+  width: 70px;
+}
+
+::-webkit-input-placeholder {
+  color: #ccc;
+}
