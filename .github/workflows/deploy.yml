@@ -40,14 +40,13 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@master
-        - name: Deploy
-          uses: JamesIves/github-pages-deploy-action@releases/v3
-          with:
-            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-            BRANCH: master # The branch the action should deploy to.
-            FOLDER: test # The folder the action should deploy.
+    steps:
+      - uses: actions/checkout@master
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: master # The branch the action should deploy to.
+          FOLDER: test # The folder the action should deploy.
 
 
